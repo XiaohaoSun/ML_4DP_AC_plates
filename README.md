@@ -3,5 +3,5 @@ Machine learning-enabled forward prediction and inverse design for 4D-printed ac
 
 Our paper is under review now.
 
-All the codes will be open-sourced here.
+The core codes will be open-sourced here.
 
