@@ -65,8 +65,8 @@ ga_ins = reshape(ga_x',15,15,2,[]);
 ga_ins = (ga_ins-mu)/0.5; % normalization for ins (mu is not exactly 0.5)
 
 % ML prediction of ins
-xyzPred = predict(netD2S,ga_ins,'MiniBatchSize',1);
-zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',1);
+xyzPred = predict(netD2S,ga_ins,'MiniBatchSize',250);
+zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',250);
 
 xyzPred = cat(3,xyzPred(:,:,1:2),zPred);
 rmse = sqrt(mean((xyzPred-outIntui).^2,[1,2,3])); % rmse
@@ -82,8 +82,8 @@ global outIntui
 ga_ins = (reshape(ga_x',15,15,2,[])-mu)/0.5;
 
 % ML prediction of ins
-xyPred = predict(netD2Sxy,ga_ins,'MiniBatchSize',1);
-zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',1);
+xyPred = predict(netD2Sxy,ga_ins,'MiniBatchSize',250);
+zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',250);
 xyzPred = cat(3,xyPred,zPred);
 
 % % back to oriBC?
