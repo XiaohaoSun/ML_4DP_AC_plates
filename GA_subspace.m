@@ -82,8 +82,8 @@ ga_temp(:,subspaceInd) = gaSub_x;
 ga_ins = (reshape(ga_temp',15,15,2,[])-mu)/0.5;
 
 % ML prediction of ins
-xyPred = predict(netD2Sxy,ga_ins,'MiniBatchSize',1);
-zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',1);
+xyPred = predict(netD2Sxy,ga_ins,'MiniBatchSize',250);
+zPred = predict(netD2Sz,ga_ins,'MiniBatchSize',250);
 xyzPred = cat(3,xyPred,zPred);
 
 % % back to oriBC?
